@@ -1,0 +1,113 @@
+/* Garcia Costa — Design System (produção) */
+:root {
+  --bone:#F5F1EA; --paper:#FBF8F3; --mist:#E8E6E1; --concrete:#BFC1BE;
+  --ink-soft:#3A3A38; --graphite:#1F1F1F; --bronze:#B08A4A; --bronze-deep:#8E6E36;
+  --max:1240px;
+}
+@font-face { font-family:"Optima"; src:url("/assets/fonts/Optima-Regular.ttf") format("truetype"); font-weight:400; font-display:swap; }
+* { box-sizing:border-box; }
+html { -webkit-text-size-adjust:100%; }
+body { margin:0; background:var(--bone); color:var(--graphite); font-family:'Montserrat',sans-serif; -webkit-font-smoothing:antialiased; }
+h1,h2,h3 { font-family:'Cormorant Garamond',serif; font-weight:300; margin:0; }
+p,li { color:var(--ink-soft); }
+a { color:var(--graphite); text-decoration:none; }
+a:hover { color:var(--bronze); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline:2px solid var(--bronze); outline-offset:2px;
+}
+img { max-width:100%; }
+.mono { font-family:'JetBrains Mono',monospace; }
+.eyebrow { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--bronze); margin-bottom:24px; }
+
+.skip-link {
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--graphite); color:var(--bone); padding:12px 20px; font-size:13px;
+}
+.skip-link:focus { left:12px; top:12px; }
+
+/* Header */
+.site-header {
+  position:sticky; top:0; z-index:20; background:var(--bone);
+  border-bottom:1px solid var(--graphite);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px clamp(20px,6vw,64px);
+}
+.brand { display:inline-flex; align-items:center; gap:12px; }
+.brand-mark { width:14px; height:46px; }
+.brand-word { font-family:'Optima','Montserrat',sans-serif; font-size:15px; letter-spacing:0.1em; color:var(--graphite); }
+.site-nav { display:flex; gap:clamp(20px,3vw,40px); font-size:12px; letter-spacing:0.06em; }
+.site-nav a.is-active { border-bottom:1px solid var(--graphite); padding-bottom:2px; }
+.nav-toggle {
+  display:none; background:none; border:1px solid var(--graphite); width:40px; height:40px;
+  align-items:center; justify-content:center; padding:0; cursor:pointer;
+}
+.nav-toggle-bar, .nav-toggle-bar::before, .nav-toggle-bar::after {
+  content:''; display:block; width:18px; height:1px; background:var(--graphite);
+}
+.nav-toggle-bar { position:relative; }
+.nav-toggle-bar::before { position:absolute; top:-6px; left:0; }
+.nav-toggle-bar::after { position:absolute; top:6px; left:0; }
+.site-nav-mobile {
+  display:none; flex-direction:column; background:var(--bone);
+  border-bottom:1px solid var(--graphite); padding:8px clamp(20px,6vw,64px) 24px; font-size:14px;
+}
+.site-nav-mobile a { padding:14px 0; border-bottom:1px solid var(--mist); color:var(--graphite); }
+.site-nav-mobile a:last-child { border-bottom:none; }
+.site-nav-mobile.is-open { display:flex; }
+@media (max-width:759px) {
+  .site-nav { display:none; }
+  .nav-toggle { display:flex; }
+}
+
+/* Footer */
+.site-footer { background:var(--mist); padding:clamp(40px,8vw,64px) clamp(20px,6vw,64px); }
+.footer-grid { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:40px; }
+.footer-text { font-size:12px; color:var(--ink-soft); line-height:1.7; }
+.footer-heading { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:16px; }
+.footer-links { display:flex; flex-direction:column; gap:10px; font-size:12px; }
+.footer-bottom { max-width:var(--max); margin:56px auto 0; padding-top:24px; border-top:1px solid var(--concrete); font-size:10px; color:var(--ink-soft); letter-spacing:0.06em; }
+
+/* Layout helpers */
+.wrap { max-width:var(--max); margin:0 auto; padding-left:clamp(20px,6vw,64px); padding-right:clamp(20px,6vw,64px); }
+.wrap-narrow { max-width:900px; margin:0 auto; padding-left:clamp(20px,6vw,64px); padding-right:clamp(20px,6vw,64px); }
+.wrap-article { max-width:680px; margin:0 auto; padding-left:clamp(20px,6vw,64px); padding-right:clamp(20px,6vw,64px); }
+.rule-top { border-top:1px solid var(--graphite); }
+
+/* Cards */
+.card-publicacao { display:block; color:var(--graphite); }
+.card-publicacao .thumb { aspect-ratio:4/3; background:repeating-linear-gradient(135deg,var(--mist),var(--mist) 10px,#DFDCD3 10px,#DFDCD3 20px); margin-bottom:20px; }
+.card-publicacao .category { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--bronze); margin-bottom:8px; }
+.card-publicacao .title { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; margin-bottom:8px; line-height:1.35; }
+.card-publicacao .date { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-soft); }
+
+.card-equipe { display:block; color:var(--graphite); background:var(--paper); border-top:1px solid var(--graphite); padding:28px 24px; }
+.card-equipe .photo { aspect-ratio:1; width:72px; background:repeating-linear-gradient(135deg,var(--mist),var(--mist) 8px,#DFDCD3 8px,#DFDCD3 16px); margin-bottom:20px; }
+.card-equipe .name { font-size:14px; font-weight:500; }
+.card-equipe .role { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft); margin-top:6px; }
+
+/* Buttons / links */
+.btn {
+  display:inline-block; font-size:12px; letter-spacing:0.1em; text-transform:uppercase;
+  border:1px solid var(--graphite); padding:16px 32px; background:none; color:var(--graphite);
+  font-family:'Montserrat',sans-serif; cursor:pointer;
+}
+.link-underline { font-size:12px; letter-spacing:0.06em; border-bottom:1px solid var(--graphite); padding-bottom:2px; display:inline-block; }
+
+/* Forms */
+.field { margin-bottom:28px; }
+.field label { display:block; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px; }
+.field input, .field textarea {
+  width:100%; border:none; border-bottom:1px solid var(--graphite); background:transparent;
+  padding:8px 0; font-size:14px; font-family:'Montserrat',sans-serif; color:var(--graphite); outline:none;
+}
+.field textarea { resize:none; height:96px; }
+
+/* Diferenciais / pilares grid */
+.grid-hairline { display:grid; gap:1px; background:var(--graphite); }
+.grid-hairline > * { background:var(--bone); }
+.tile { padding:40px 32px; }
+.tile .num { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--bronze); margin-bottom:16px; }
+.tile .tile-title { font-size:14px; font-weight:500; margin-bottom:10px; }
+.tile .tile-body { font-size:13px; line-height:1.7; color:var(--ink-soft); }
+
+@media print { .site-header, .nav-toggle, .site-nav-mobile { display:none; } }

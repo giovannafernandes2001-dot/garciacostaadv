@@ -1,0 +1,8 @@
+# Garcia Costa — Advocacia e Assessoria Estratégica
+# [VALIDAR DOMÍNIO] — substituir www.garciacosta.adv.br pelo domínio real antes da publicação
+
+User-agent: *
+Allow: /
+Disallow: /links.html
+
+Sitemap: https://www.garciacosta.adv.br/sitemap.xml
