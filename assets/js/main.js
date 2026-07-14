@@ -39,6 +39,9 @@
   document.querySelectorAll('[data-sc="phone-href"]').forEach(function (el) {
     el.setAttribute('href', c.phoneHref || 'tel:+556199999999');
   });
+  document.querySelectorAll('[data-sc="whatsapp-href"]').forEach(function (el) {
+    el.setAttribute('href', c.whatsappHref || 'https://wa.me/556199999999');
+  });
   document.querySelectorAll('[data-sc="mailto-form"]').forEach(function (el) {
     el.setAttribute('action', 'mailto:' + (c.email || 'contato@garciacosta.adv.br'));
   });
