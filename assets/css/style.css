@@ -82,7 +82,8 @@ img { max-width:100%; }
 
 /* Cards */
 .card-publicacao { display:block; color:var(--graphite); }
-.card-publicacao .thumb { aspect-ratio:4/3; background:repeating-linear-gradient(135deg,var(--mist),var(--mist) 10px,#DFDCD3 10px,#DFDCD3 20px); margin-bottom:20px; }
+.card-publicacao .thumb { aspect-ratio:4/3; background:repeating-linear-gradient(135deg,var(--mist),var(--mist) 10px,#DFDCD3 10px,#DFDCD3 20px); margin-bottom:20px; overflow:hidden; }
+.card-publicacao .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
 .card-publicacao .category { font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--bronze); margin-bottom:8px; }
 .card-publicacao .title { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; margin-bottom:8px; line-height:1.35; }
 .card-publicacao .date { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-soft); }
