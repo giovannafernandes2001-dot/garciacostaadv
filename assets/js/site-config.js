@@ -6,9 +6,8 @@
 window.SITE_CONFIG = {
   domain: 'https://garciacostaadv.com.br',
 
-  // Imagem provisória de compartilhamento.
-  // Garanta que exista um arquivo com esse nome dentro de assets/images/.
-  // Idealmente, crie depois uma imagem horizontal de 1200 × 630 px.
+  // Imagem de compartilhamento (og:image / twitter:image), 1200 × 630 px,
+  // com o croqui assinatura do escritório.
   ogImagePath: '/assets/images/og-image.png',
 
   site: {
